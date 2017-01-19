@@ -1,15 +1,1 @@
-<h2>From factory: {{factoryThing}}</h2>
-
-<h3>List</h3>
-
-<input type="text" ng-model="searchList">
-<div ng-if="list.length >=3" class="red">
-<h5 ng-if="list.length == 3">My list has 3 items!</h5>
-<ul>
-    <li ng-repeat="listItem in list | filter: searchList">
-    <a href="#/list/{{listItem.id}}">item:
-    {{listItem.item}}</a></li>
-</ul>
-</div>
-
-<h3>My variable {{list}}</h3>
+<h1>{{mushroom}} {{edible}}</h1>
