@@ -3,11 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>Mushroom Mania</title>
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body ng-app="MushroomMania">
+<body>
 
-<div ng-view></div>
-
+<div class="container">
+    <div ng-app="MushroomMania">
+        <div ng-view></div>
+    </div>
+</div>
 <!-- radio buttons needed above list(poisonous and non-poisonous) -->
 
 <!-- When the user types any text into the text box, the list of mushrooms should be filtered down to any mushrooms whose description contains that text. -->
@@ -15,8 +19,8 @@
 <!-- When the user clicks either of the radio buttons, only the appropriate mushrooms should be displayed. -->
 
 
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
     <script src="/app/app.js"></script>
     <script src="/app/factories/config.js"></script>
     <script src="/app/controllers/main.js"></script>
