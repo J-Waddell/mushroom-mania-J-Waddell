@@ -13,7 +13,7 @@ angular.module('MushroomMania', ['ngRoute'])
         })
     })
 
-.controller('RootCtrl', function($scope) {
+.controller('RootCtrl', function($scope, $location) {
     console.log('I am a RootCtrl')
     $scope.gotoMushroom = () => {
 
@@ -26,19 +26,12 @@ angular.module('MushroomMania', ['ngRoute'])
 
     mushroomFactory.getMushroom($routeParams.mushroom)
         .then((mushroom) => {
-            $scope.name = mushroom.name
+            $scope.name = mushroom
             $scope.edible = mushroom.edible
+            $scope.description = mushroom.description
+            // $scope.mushroom = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
         })
     })
-
-// .factory('mushroomFactory', ($http) => {
-//     return {
-//         getMushroom (name) {
-//             return $http
-//             .get(`mushrooms.json`)
-//             .then((response) => ({
-//                 edible:mushrooms.json.edible,
-//                 description:mushrooms.json.description,
 
 .factory('mushroomFactory', function($http) {
     return {
@@ -47,7 +40,11 @@ angular.module('MushroomMania', ['ngRoute'])
             .then((value) => {
                 console.log(value)
                 return value.data
+                // name.data.mushrooms,
+                // edible.data.mushrooms.edible,
+                // description.data.mushrooms.description
             })
-        }
+          
+        },
     }
 })
