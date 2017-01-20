@@ -1,7 +1,31 @@
+<link rel="stylesheet" type="text/css" href="partials/mushroom.css">
 <h3>🍄Welcome to Mushroom Mania🍄</h3>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <form ng-submit="gotoMushroom()">
+                <input class="mushroomText" ng-model="mushroom" type="text" placeholder="Search Fungi">
+                <input type="submit" class="btn btn-danger" value="Get Mushroom">
+            </form>
+            <br>
+                <label for="poisonous">Poiznous:
+                    <input id="p1" type="radio" name="check" ng-value="false" ng-model="poiznous">
+                </label>
+                <hr>
+                <br>
+                <label for="non-poisonous">Non-Poiznous:
+                    <input id="p2" type="radio" name="check" ng-value="true" ng-model="non-poiznous">
+                </label>
+                <hr>
+        </div>
+    </div>
+</div>
 
-<form ng-submit="gotoMushroom()">
-    <input ng-model="mushroom" type="text" placeholder="Search Fungi">
-    <input type="submit" class="btn btn-danger" value="Get Mushroom">
-</form>
-<p>{{name}}</p>
+
+<ul ng-repeat="list in name | filter : mushroom | filter : poiznous">
+    <li ng-repeat="(key, value) in list">
+    <h3>{{key | uppercase}}</h3> 
+    <h4>{{value.description}}</h4>
+    <h4><font color="red">Edible:</font> {{value.edible}}</h4>
+    </li>
+</ul>
