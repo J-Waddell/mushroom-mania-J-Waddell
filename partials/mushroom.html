@@ -5,7 +5,7 @@
         <div class="col-md-4">
             <form ng-submit="gotoMushroom()">
                 <input class="mushroomText" ng-model="mushroom" type="text" placeholder="Search Fungi">
-                <input type="submit" class="btn btn-danger" value="Get Mushroom">
+                <!-- <input type="submit" class="btn btn-danger" value="Get Mushroom"> -->
             </form>
             <br>
                 <label for="poisonous">Poiznous:
@@ -17,6 +17,10 @@
                     <input id="p2" type="radio" name="check" ng-value="true" ng-model="poiznous">
                 </label>
                 <hr>
+                <br>
+                <label for="both">Both:
+                    <input id="p3" type="radio" name="check" ng-value=" " ng-model="poiznous">
+                </label>
         </div>
     </div>
 </div>
